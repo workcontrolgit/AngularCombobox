@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <h1>
+      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
+      <span translate>Hello world !</span>
+    </h1>
+    <app-loader [isLoading]="isLoading"></app-loader>
+    <q [hidden]="isLoading">{{ quote }}</q>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">1. appSetting</h5>
+      <pre>{{ appSettingValue }}</pre>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">2. baseUrl</h5>
+      <pre>{{ baseUrlValue }}</pre>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">3. detectSubEnvironment</h5>
+      <pre>{{ detectSubEnvironment }}</pre>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">4. subEnvironmentSetting</h5>
+      <pre>{{ subEnvironmentSettingValue }}</pre>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">5. environment</h5>
+      <pre>{{ environmentValue }}</pre>
+    </div>
+  </div>
+</div>
