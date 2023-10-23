@@ -3,13 +3,6 @@ import { finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
 
-import { Logger } from '@shared';
-
-const log = new Logger('Home');
-
-import { appSetting, subEnvironmentSetting, baseUrl, DetectSubEnvironment } from '@env/appsettings';
-import { environment } from '@env/environment';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,11 +11,6 @@ import { environment } from '@env/environment';
 export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
-  appSettingValue = JSON.stringify(appSetting);
-  subEnvironmentSettingValue = JSON.stringify(subEnvironmentSetting);
-  baseUrlValue = baseUrl();
-  detectSubEnvironment = DetectSubEnvironment();
-  environmentValue = JSON.stringify(environment);
 
   constructor(private quoteService: QuoteService) {}
 
@@ -38,10 +26,6 @@ export class HomeComponent implements OnInit {
       .subscribe((quote: string) => {
         this.quote = quote;
       });
-
-    log.debug('appSetting', this.appSettingValue);
-    log.debug('subEnvironmentSetting', this.subEnvironmentSettingValue);
-    log.debug('baseUrl', this.baseUrlValue);
-    log.debug('detectSubEnvironment', this.detectSubEnvironment);
   }
+
 }

@@ -8,7 +8,7 @@
       "skipQuickstart": false,
       "initGit": true,
       "usePrefix": true,
-      "appName": "AngularDynamicConfiguration",
+      "appName": "AngularCombobox",
       "target": [
         "web"
       ],

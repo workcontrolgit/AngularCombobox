@@ -1,6 +1,6 @@
 {
-  "name": "AngularDynamicConfiguration",
-  "short_name": "AngularDynamicConfiguration",
+  "name": "AngularCombobox",
+  "short_name": "AngularCombobox",
   "theme_color": "#488aff",
   "background_color": "#488aff",
   "display": "standalone",
