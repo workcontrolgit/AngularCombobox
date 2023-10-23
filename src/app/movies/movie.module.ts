@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SharedModule } from '@shared';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { MovieRoutingModule } from './movie-routing.module';
+import { MovieComponent } from './movie.component';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    HomeRoutingModule],
-  declarations: [HomeComponent],
+    NgbRatingModule,
+    MovieRoutingModule],
+  declarations: [MovieComponent],
 })
-export class HomeModule {}
+export class MovieModule {}

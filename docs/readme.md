@@ -1,4 +1,4 @@
-# AngularDynamicConfiguration
+# AngularCombobox
 
 Welcome to the project documentation!
 
