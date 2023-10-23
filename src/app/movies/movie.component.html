@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <h1>
+      <span>Reactive Form Demo</span>
+    </h1>
+  </div>
+
+  <form [formGroup]="frm" (ngSubmit)="onPost()">
+
+    <div class="card mb-3">
+      <div class="card-header">
+        <h4>Movie Rating</h4>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Search (ng-select)</h5>
+        <ng-select [items]="movies$ | async" bindLabel="Title" [trackByFn]="trackByFn" [minTermLength]="minLengthTerm"
+          [loading]="moviesLoading" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
+          [typeahead]="moviesInput$" [(ngModel)]="selectedMovie" formControlName="selectedMovie">
+          <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+            <div class="card-body">
+              <h5 class="card-title">{{item.Title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Year: {{item.Year}}</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">imdbID: {{item.imdbID}}</li>
+                <li class="list-group-item">Type: {{item.Type}}</li>
+                <li class="list-group-item">Poster: {{item.Poster}}</li>
+              </ul>
+            </div>
+          </ng-template>
+        </ng-select>
+        <h5 class="card-title mt-3">Rating (ng-bootstrap rating)</h5>
+        <ngb-rating [(rate)]="defaultRate" formControlName="selectedRating"></ngb-rating>
+
+      </div>
+
+      <div class="card-footer">
+        <button class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </div>
+
+
+  </form>
+  <div *ngIf="isSubmitted" class="message">
+    {{frm.value | json}}
+
+  </div>
+
+</div>
