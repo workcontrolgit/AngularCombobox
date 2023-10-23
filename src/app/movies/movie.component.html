@@ -17,7 +17,11 @@
           [loading]="moviesLoading" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
           [typeahead]="moviesInput$" [(ngModel)]="selectedMovie" formControlName="selectedMovie">
           <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
-            <div class="card-body">
+            <div class="row">
+            <div class="col-sm-2">
+              <img *ngIf="item.Poster !=='N/A'" class="img-thumbnail" src="{{item.Poster}}" alt="Card image cap">
+            </div>
+            <div class="col-sm-10">
               <h5 class="card-title">{{item.Title}}</h5>
               <h6 class="card-subtitle mb-2 text-muted">Year: {{item.Year}}</h6>
               <ul class="list-group list-group-flush">
@@ -25,7 +29,7 @@
                 <li class="list-group-item">Type: {{item.Type}}</li>
                 <li class="list-group-item">Poster: {{item.Poster}}</li>
               </ul>
-            </div>
+            </div></div>
           </ng-template>
         </ng-select>
         <h5 class="card-title mt-3">Rating (ng-bootstrap rating)</h5>
