@@ -1,0 +1,89 @@
+{
+  "configVersion": 1,
+  "timestamp": 1698029295988,
+  "index": "/AngularCombobox/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/AngularCombobox/219.d3cf56b5bf9c5ad5.js",
+        "/AngularCombobox/384.0eca031b52efc71b.js",
+        "/AngularCombobox/favicon.ico",
+        "/AngularCombobox/index.html",
+        "/AngularCombobox/main.afc77ad451f8109d.js",
+        "/AngularCombobox/manifest.webmanifest",
+        "/AngularCombobox/polyfills.41a08d0198f379a7.js",
+        "/AngularCombobox/runtime.f775576355cfc705.js",
+        "/AngularCombobox/styles.f3613fa01a43d2af.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/AngularCombobox/apple-touch-icon.png",
+        "/AngularCombobox/assets/config/appsettings.json",
+        "/AngularCombobox/assets/ngx-rocket-logo.png",
+        "/AngularCombobox/assets/ngx-rocket-logo@192.png",
+        "/AngularCombobox/fa-brands-400.9a905705860d0777.ttf",
+        "/AngularCombobox/fa-brands-400.b6033b540dd66f84.woff2",
+        "/AngularCombobox/fa-regular-400.3580b4a95c9bb1d5.woff2",
+        "/AngularCombobox/fa-regular-400.67a0fb748649533d.ttf",
+        "/AngularCombobox/fa-solid-900.6a8db53d80e9da0c.ttf",
+        "/AngularCombobox/fa-solid-900.fd0b155cd663a8fa.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/AngularCombobox/219.d3cf56b5bf9c5ad5.js": "d42b444ee9011cc49dd93f6bd2c50336d5f2e2ba",
+    "/AngularCombobox/384.0eca031b52efc71b.js": "b06ccf9e95ff1ebfd5597434e3e1c9fe9326d866",
+    "/AngularCombobox/apple-touch-icon.png": "229df2094cc590088de00ea97a1eb4e4493101d2",
+    "/AngularCombobox/assets/config/appsettings.json": "b4fd61b721dcd0aa70527cbfb1c0590b3bb85ebd",
+    "/AngularCombobox/assets/ngx-rocket-logo.png": "0ac53fd27406fe5a36e68285315fb0012e54058e",
+    "/AngularCombobox/assets/ngx-rocket-logo@192.png": "461b730f9c6dc818f8af9acbe62dfde24dc02d7a",
+    "/AngularCombobox/fa-brands-400.9a905705860d0777.ttf": "d8b3568e9d8a1d3c01c85520eb9ca0b49b72815d",
+    "/AngularCombobox/fa-brands-400.b6033b540dd66f84.woff2": "373361ed756b1fe68ce2f5968d467826b6973bb5",
+    "/AngularCombobox/fa-regular-400.3580b4a95c9bb1d5.woff2": "07fc0ae14bb3187839082aed3bca11dfb1e04524",
+    "/AngularCombobox/fa-regular-400.67a0fb748649533d.ttf": "2d7890e12afb77490112ec57fe47ca0688aebda2",
+    "/AngularCombobox/fa-solid-900.6a8db53d80e9da0c.ttf": "e9ace557c3aa403307f1e7a2cef1c035d522b94b",
+    "/AngularCombobox/fa-solid-900.fd0b155cd663a8fa.woff2": "97f0942c6627ddd89fb62170e5cac9a2cbd6c98c",
+    "/AngularCombobox/favicon.ico": "b65083d46bbf63692d5d2cdd69622e6d7ecae317",
+    "/AngularCombobox/index.html": "70f6948f5c1b6f779f8bbd9552dfd3c8d67859a2",
+    "/AngularCombobox/main.afc77ad451f8109d.js": "631c63a2e655ba55486b45c3fda4fe48b9dd9c9c",
+    "/AngularCombobox/manifest.webmanifest": "0c69740a9a36689dbc41e563990660406a27fccf",
+    "/AngularCombobox/polyfills.41a08d0198f379a7.js": "e4c9b167273e2adec46bfceaafc02af59dd0633e",
+    "/AngularCombobox/runtime.f775576355cfc705.js": "688d289858f2921e7d68e7b2d41d7f555c1ac70a",
+    "/AngularCombobox/styles.f3613fa01a43d2af.css": "de416471914cebd9ad955275b6f308bff26ae635"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
