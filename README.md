@@ -1,7 +1,6 @@
 # AngularCombobox
 
-This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
-version 11.0.0
+This project was generated for Medium publication [Angular Advanced UI: Combo Box with Typeahead Search and Rating Component in Reactive Form](https://medium.com/scrum-and-coke/angular-advanced-ui-combo-box-with-typeahead-search-and-rating-component-in-reactive-form-e32b5152ee86).
 
 # Getting started
 
