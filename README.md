@@ -2,6 +2,9 @@
 
 This project was generated for Medium publication [Angular Advanced UI: Combo Box with Typeahead Search and Rating Component in Reactive Form](https://medium.com/scrum-and-coke/angular-advanced-ui-combo-box-with-typeahead-search-and-rating-component-in-reactive-form-e32b5152ee86).
 
+# angular-cli-ghpages
+ng deploy --base-href=/AngularCombobox/
+
 # Getting started
 
 1. Go to project folder and install dependencies:
