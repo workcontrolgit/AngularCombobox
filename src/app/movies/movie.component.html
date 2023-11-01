@@ -12,7 +12,7 @@
         <h4>Movie Rating</h4>
       </div>
       <div class="card-body">
-        <h5 class="card-title">Search (ng-select)</h5>
+        <h5 class="card-title">Movie</h5>
         <ng-select [items]="movies$ | async" bindLabel="Title" [trackByFn]="trackByFn" [minTermLength]="minLengthTerm"
           [loading]="moviesLoading" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
           [typeahead]="moviesInput$" [(ngModel)]="selectedMovie" formControlName="selectedMovie">
@@ -32,13 +32,22 @@
             </div></div>
           </ng-template>
         </ng-select>
-        <h5 class="card-title mt-3">Rating (ng-bootstrap rating)</h5>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <small [hidden]="f.selectedMovie.valid || f.selectedMovie.untouched" class="text-danger" translate>
+          Movie is required
+        </small>
+        <div class="invalid-feedback">
+          Please choose a movie.
+        </div>
+        <h5 class="card-title mt-3">Rating</h5>
         <ngb-rating [(rate)]="defaultRate" formControlName="selectedRating"></ngb-rating>
 
       </div>
 
       <div class="card-footer">
-        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-primary" type="submit" [disabled]="frm.invalid">Save</button>
       </div>
     </div>
 
