@@ -16,8 +16,8 @@ import { MovieService } from './movie.service';
 })
 export class MovieComponent implements OnInit {
   movies$?: Observable<Movie[]>;
-  moviesLoading = false;
-  moviesInput$ = new Subject<string>();
+  searching = false;
+  searchingText$ = new Subject<string>();
   minLengthTerm = 4;
   selectedMovie?: Movie[];
 
@@ -31,7 +31,7 @@ export class MovieComponent implements OnInit {
 
   ngOnInit() {
       this.loadMovies();
-      // this.movieService.loadMovies(this.moviesLoading, this.moviesInput$, this.minLengthTerm, this.movies$);
+      // this.movieService.loadMovies(this.searching, this.searchingText$, this.minLengthTerm, this.movies$);
 
       this.frm = this.fb.group({
         'selectedMovie':[null, Validators.required],
@@ -47,18 +47,18 @@ export class MovieComponent implements OnInit {
 
     this.movies$ = concat(
       of([]), // default items
-      this.moviesInput$.pipe(
+      this.searchingText$.pipe(
         filter(res => {
           return res !== null && res.length >= this.minLengthTerm
         }),
         distinctUntilChanged(),
-        debounceTime(800),
-        tap(() => this.moviesLoading = true),
+        debounceTime(300),
+        tap(() => this.searching = true),
         switchMap(term => {
 
           return this.movieService.getMovies(term).pipe(
-            catchError(() => of([])), // empty list on error
-            tap(() => this.moviesLoading = false)
+            tap(() => this.searching = false),
+            catchError(() => of([])) // empty list on error
           )
         })
       )
