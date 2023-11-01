@@ -52,13 +52,13 @@ export class MovieComponent implements OnInit {
           return res !== null && res.length >= this.minLengthTerm
         }),
         distinctUntilChanged(),
-        debounceTime(800),
+        debounceTime(300),
         tap(() => this.moviesLoading = true),
         switchMap(term => {
 
           return this.movieService.getMovies(term).pipe(
-            catchError(() => of([])), // empty list on error
-            tap(() => this.moviesLoading = false)
+            tap(() => this.moviesLoading = false),
+            catchError(() => of([])) // empty list on error
           )
         })
       )
