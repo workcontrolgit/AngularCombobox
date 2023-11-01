@@ -14,8 +14,8 @@
       <div class="card-body">
         <h5 class="card-title">Movie</h5>
         <ng-select [items]="movies$ | async" bindLabel="Title" [trackByFn]="trackByFn" [minTermLength]="minLengthTerm"
-          [loading]="moviesLoading" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
-          [typeahead]="moviesInput$" [(ngModel)]="selectedMovie" formControlName="selectedMovie">
+          [loading]="searching" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
+          [typeahead]="searchingText$" [(ngModel)]="selectedMovie" formControlName="selectedMovie">
           <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
             <div class="row">
             <div class="col-sm-2">
