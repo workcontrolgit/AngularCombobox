@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from '@shared';
 const log = new Logger('Movie');
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { concat, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, switchMap, tap, map, filter } from 'rxjs/operators';
 import { Movie } from '@app/@shared/models/movie-model';
@@ -34,7 +34,7 @@ export class MovieComponent implements OnInit {
       // this.movieService.loadMovies(this.moviesLoading, this.moviesInput$, this.minLengthTerm, this.movies$);
 
       this.frm = this.fb.group({
-        'selectedMovie':[],
+        'selectedMovie':[null, Validators.required],
         'selectedRating': [this.defaultRate]
      })
   }
@@ -64,6 +64,10 @@ export class MovieComponent implements OnInit {
       )
     );
 
+  }
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.frm.controls;
   }
 
 }
