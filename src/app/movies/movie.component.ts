@@ -23,7 +23,7 @@ export class MovieComponent implements OnInit {
   minLengthTerm = 4;
   selectedMovie?: Movie[];
 
-  defaultRate = 8;
+  defaultRate = 0;
 
   constructor(private movieService: MovieService, private fb:FormBuilder) {}
 
@@ -37,7 +37,7 @@ export class MovieComponent implements OnInit {
 
       this.frm = this.fb.group({
         'selectedMovie':[null, Validators.required],
-        'selectedRating': [this.defaultRate]
+        'selectedRating': [null, Validators.required]
      })
   }
 
