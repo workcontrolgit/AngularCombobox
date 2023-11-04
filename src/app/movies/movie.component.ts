@@ -8,6 +8,8 @@ import { Movie } from '@app/@shared/models/movie-model';
 
 import { MovieService } from './movie.service';
 
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-movie',
