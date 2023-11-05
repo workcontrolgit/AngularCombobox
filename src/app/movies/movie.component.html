@@ -4,37 +4,59 @@
       <span>Demo</span>
     </h1>
   </div>
-  <p class="text-left">The app showcases an advanced UI combo box, integrating typeahead search functionality, tooltips, and a rating component within a reactive form. It serves as a practical example to illustrate the implementation of these features in an Angular application.</p>
+  <p class="text-left">
+    The app showcases an advanced UI combo box, integrating typeahead search functionality, tooltips, and a rating
+    component within a reactive form. It serves as a practical example to illustrate the implementation of these
+    features in an Angular application.
+  </p>
 
   <form [formGroup]="frm" (ngSubmit)="onPost()">
-
     <div class="card mb-3">
       <div class="card-header">
         <h4>Movie Rating System</h4>
       </div>
       <div class="card-body">
         <div class="form-group">
-          <label for="selectedMovie" class="card-title d-flex flex-wrap align-items-center">Movie
-            <button type="button" class="btn btn-link" placement="end" ngbTooltip="Search and select your favorite movies effortlessly with our intuitive combo box feature! Simply start typing the movie name, and our smart search will display matching results. Click to select your choice, and voila! Enjoy a seamless movie selection experience at your fingertips. Happy movie hunting!">
+          <label for="selectedMovie" class="card-title d-flex flex-wrap align-items-center"
+            >Movie
+            <button
+              type="button"
+              class="btn btn-link"
+              placement="end"
+              ngbTooltip="Search and select your favorite movies effortlessly with our intuitive combo box feature! Simply start typing the movie name, and our smart search will display matching results. Click to select your choice, and voila! Enjoy a seamless movie selection experience at your fingertips. Happy movie hunting!"
+            >
               <i class="fas fa-info-circle"></i>
             </button>
           </label>
 
-          <ng-select [items]="movies$ | async" bindLabel="Title" [trackByFn]="trackByFn" [minTermLength]="minLengthTerm"
-            [loading]="searching" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
-            [typeahead]="searchingText$" [(ngModel)]="selectedMovie" formControlName="selectedMovie">
+          <ng-select
+            [items]="movies$ | async"
+            bindLabel="Title"
+            [trackByFn]="trackByFn"
+            [minTermLength]="minLengthTerm"
+            [loading]="searching"
+            typeToSearchText="Please enter {{ minLengthTerm }} or more characters"
+            [typeahead]="searchingText$"
+            [(ngModel)]="selectedMovie"
+            formControlName="selectedMovie"
+          >
             <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
               <div class="row">
                 <div class="col-sm-2">
-                  <img *ngIf="item.Poster !=='N/A'" class="img-thumbnail" src="{{item.Poster}}" alt="Card image cap">
+                  <img
+                    *ngIf="item.Poster !== 'N/A'"
+                    class="img-thumbnail"
+                    src="{{ item.Poster }}"
+                    alt="Card image cap"
+                  />
                 </div>
                 <div class="col-sm-10">
-                  <h5 class="card-title">{{item.Title}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Year: {{item.Year}}</h6>
+                  <h5 class="card-title">{{ item.Title }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Year: {{ item.Year }}</h6>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">imdbID: {{item.imdbID}}</li>
-                    <li class="list-group-item">Type: {{item.Type}}</li>
-                    <li class="list-group-item">Poster: {{item.Poster}}</li>
+                    <li class="list-group-item">imdbID: {{ item.imdbID }}</li>
+                    <li class="list-group-item">Type: {{ item.Type }}</li>
+                    <li class="list-group-item">Poster: {{ item.Poster }}</li>
                   </ul>
                 </div>
               </div>
@@ -45,32 +67,30 @@
           </small>
         </div>
         <div class="form-group">
-        <label for="selectedRating" class="card-title d-flex flex-wrap align-items-center">Rating
-          <button type="button" class="btn btn-link" placement="end" ngbTooltip="Rate your movie experience on a scale from 1 to 5 stars! Simply click on the desired number of stars to express your opinion. 1 star for not-so-great, 5 stars for absolutely fantastic! Your rating helps us understand your preferences better. Happy rating!">
-            <i class="fas fa-info-circle"></i>
-          </button>
-        </label>
-        <ngb-rating [max]="5" class="form-control" formControlName="selectedRating">
-
-
-        </ngb-rating>
-        <small [hidden]="f.selectedRating.valid || f.selectedRating.untouched" class="text-danger" translate>
-          Rating is required
-        </small>
-    </div>
-
+          <label for="selectedRating" class="card-title d-flex flex-wrap align-items-center"
+            >Rating
+            <button
+              type="button"
+              class="btn btn-link"
+              placement="end"
+              ngbTooltip="Rate your movie experience on a scale from 1 to 5 stars! Simply click on the desired number of stars to express your opinion. 1 star for not-so-great, 5 stars for absolutely fantastic! Your rating helps us understand your preferences better. Happy rating!"
+            >
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </label>
+          <ngb-rating [max]="5" class="form-control" formControlName="selectedRating"> </ngb-rating>
+          <small [hidden]="f.selectedRating.valid || f.selectedRating.untouched" class="text-danger" translate>
+            Rating is required
+          </small>
+        </div>
       </div>
 
       <div class="card-footer">
         <button class="btn btn-primary" type="submit" [disabled]="frm.invalid">Save</button>
       </div>
     </div>
-
-
   </form>
   <div *ngIf="isSubmitted" class="message">
-    {{frm.value | json}}
-
+    {{ frm.value | json }}
   </div>
-
 </div>
